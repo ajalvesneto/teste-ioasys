@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		192E89DA2617509E003ABBE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E89D92617509E003ABBE7 /* AppDelegate.swift */; };
 		192E89DC2617509E003ABBE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E89DB2617509E003ABBE7 /* SceneDelegate.swift */; };
-		192E89DE2617509E003ABBE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E89DD2617509E003ABBE7 /* ViewController.swift */; };
+		192E89DE2617509E003ABBE7 /* eye.slash.fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E89DD2617509E003ABBE7 /* eye.slash.fill.swift */; };
 		192E89E12617509E003ABBE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 192E89DF2617509E003ABBE7 /* Main.storyboard */; };
 		192E89E3261750A1003ABBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192E89E2261750A1003ABBE7 /* Assets.xcassets */; };
 		192E89E6261750A1003ABBE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 192E89E4261750A1003ABBE7 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		192E89D62617509E003ABBE7 /* Empresas Ioasys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Empresas Ioasys.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		192E89D92617509E003ABBE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		192E89DB2617509E003ABBE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		192E89DD2617509E003ABBE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		192E89DD2617509E003ABBE7 /* eye.slash.fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eye.slash.fill.swift; sourceTree = "<group>"; };
 		192E89E02617509E003ABBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		192E89E2261750A1003ABBE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		192E89E5261750A1003ABBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,55 @@
 		192E89D82617509E003ABBE7 /* Empresas Ioasys */ = {
 			isa = PBXGroup;
 			children = (
+				19302F512618B7BC00FE811C /* API */,
+				19302F502618B7B000FE811C /* Network */,
+				19302F4F2618B7A900FE811C /* Controller */,
+				19302F4D2618B79F00FE811C /* View */,
+				19302F4B2618B78E00FE811C /* Model */,
 				192E89D92617509E003ABBE7 /* AppDelegate.swift */,
 				192E89DB2617509E003ABBE7 /* SceneDelegate.swift */,
-				192E89DD2617509E003ABBE7 /* ViewController.swift */,
+				192E89DD2617509E003ABBE7 /* eye.slash.fill.swift */,
 				192E89DF2617509E003ABBE7 /* Main.storyboard */,
 				192E89E2261750A1003ABBE7 /* Assets.xcassets */,
 				192E89E4261750A1003ABBE7 /* LaunchScreen.storyboard */,
 				192E89E7261750A1003ABBE7 /* Info.plist */,
 			);
 			path = "Empresas Ioasys";
+			sourceTree = "<group>";
+		};
+		19302F4B2618B78E00FE811C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19302F4D2618B79F00FE811C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19302F4F2618B7A900FE811C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		19302F502618B7B000FE811C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		19302F512618B7BC00FE811C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				192E89DE2617509E003ABBE7 /* ViewController.swift in Sources */,
+				192E89DE2617509E003ABBE7 /* eye.slash.fill.swift in Sources */,
 				192E89DA2617509E003ABBE7 /* AppDelegate.swift in Sources */,
 				192E89DC2617509E003ABBE7 /* SceneDelegate.swift in Sources */,
 			);
