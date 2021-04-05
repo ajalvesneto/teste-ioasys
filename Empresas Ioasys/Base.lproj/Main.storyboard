@@ -37,6 +37,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4q-tS-Fhm"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ba8-6J-sGR">
                                 <rect key="frame" x="20" y="340" width="374" height="133"/>
@@ -50,7 +53,7 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="eye" translatesAutoresizingMaskIntoConstraints="NO" id="EhA-xF-x09">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EhA-xF-x09">
                                                 <rect key="frame" x="0.0" y="24.5" width="374" height="34"/>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -75,6 +78,12 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credenciais Incorretas" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iN-du-sY0">
+                                        <rect key="frame" x="0.0" y="133" width="374" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seja bem vindo ao empresas!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMm-sk-glO">
@@ -107,8 +116,10 @@
                     <connections>
                         <outlet property="buttonSenha" destination="cTT-80-AqY" id="xMv-hU-FcZ"/>
                         <outlet property="labelBemVindo" destination="bMm-sk-glO" id="YUf-U5-Erj"/>
+                        <outlet property="labelCredenciaisIncorretas" destination="8iN-du-sY0" id="iLh-MN-hxx"/>
                         <outlet property="labelEmail" destination="Fgt-6V-xBb" id="RHA-1H-zjn"/>
                         <outlet property="labelSenha" destination="X1U-ed-053" id="GUi-9V-pid"/>
+                        <outlet property="textFieldEmail" destination="EhA-xF-x09" id="eJX-sR-O84"/>
                         <outlet property="textFieldPassword" destination="cTT-80-AqY" id="0Qr-Wd-Wdn"/>
                     </connections>
                 </viewController>
@@ -119,10 +130,12 @@
     </scenes>
     <resources>
         <image name="background_top" width="374" height="234"/>
-        <image name="eye" width="128" height="128"/>
         <image name="logo" width="40" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
