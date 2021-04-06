@@ -16,7 +16,7 @@ struct ResultModel<T: Decodable>: Decodable {
     
     
     enum CodingKeys: String, CodingKey {
-        case investor = "investor"
+        case investor
         case enterprise
         case success
         case errors

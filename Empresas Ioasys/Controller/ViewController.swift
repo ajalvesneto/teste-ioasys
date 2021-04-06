@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelCredenciaisIncorretas: UILabel!
     
     
-    @IBOutlet weak var textFieldEmail: UITextField!
+    @IBOutlet weak var textFieldEmail: textFieldLogin!
     @IBOutlet weak var textFieldPassword: UITextField!
     
     private lazy var networking = Networking()
@@ -90,24 +90,21 @@ class ViewController: UIViewController {
        
         
         let path = "https://empresas.ioasys.com.br/api/v1/users/auth/sign_in"
-        let headers = ["application/json": "Content-Type"]
+        let headers = ["Content-Type" : "application/json"]
         
+        let parameters = ["email" : "\(textFieldEmail.text)", "password" : "\(textFieldPassword.text)"]
         
-        
-        let parameters = ["email" : "\(textFieldEmail.text ?? "testeapple@ioasys.com.br")", "password" : "\(textFieldPassword.text ?? "12341234")"]
-        
-
         
         networking.performRequest(type: ResultModel<Investor>.self, path: path, method: .post, headers: headers, parameters: parameters) { [self] (result, error) in
 
             if let error = error {
-                print(error.localizedDescription)
+                print(error)
             } else {
                 guard let result = result else { return }
                 if(result.success){
                    print("funcionou")
                 }else{
-                   errorMessage()
+                    errorMessage()
                 }
             }
         }
@@ -124,6 +121,7 @@ class ViewController: UIViewController {
         textFieldEmail.layer.cornerRadius = 5
         textFieldEmail.layer.borderColor = .init(red: 1, green: 0, blue: 0, alpha: 1)
         textFieldEmail.rightViewMode = .always
+        //self.textFieldEmail.teste()
        
         
         textFieldPassword.layer.borderWidth = 1

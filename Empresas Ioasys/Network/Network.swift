@@ -9,7 +9,6 @@ import Foundation
 
 class Networking {
     
-    static let shared = Networking()
     
     func performRequest<T: Decodable>(type: T.Type,
                                       path: String,
@@ -33,6 +32,8 @@ class Networking {
                 return
             }
         }
+        
+        
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 DispatchQueue.main.async { completion(nil, error) }

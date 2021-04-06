@@ -16,18 +16,30 @@ struct Investor: Codable {
     let city: String
     let country: String
     let balance: Double
-    let photo: String
+    let photo: String?
+    let portfolio: Portfolio
     let portfolioValue : Double
     let firstAccess: Bool
     let superAngel: Bool
     
-}
+
 
 enum CodingKeys: String, CodingKey {
-    case id,email,city,country,balance,photo
-    
+    case id,email,city,country,balance,photo,portfolio
     case investorName = "investor_name"
     case portfolioValue = "portfolio_value"
     case firstAccess = "first_access"
     case superAngel = "super_angel"
+}
+
+}
+
+struct Portfolio: Codable {
+    let enterprisesNumber: Int
+    let enterprises: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case enterprisesNumber = "enterprises_number"
+        case enterprises
+    }
 }
