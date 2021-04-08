@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct ResultModel<T: Decodable>: Decodable {
+struct Login<T: Decodable>: Decodable {
     var investor: Investor?
     var enterprise : String?
     var success : Bool

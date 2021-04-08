@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var labelBemVindo: UILabel!
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelCredenciaisIncorretas: UILabel!
     
     
-    @IBOutlet weak var textFieldEmail: textFieldLogin!
+    @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     
     private lazy var networking = Networking()
@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     var imageViewEmail = UIImageView();
     let imageX = UIImage(systemName: "xmark.circle.fill")
     
+    var spinner = UIActivityIndicatorView(style: .whiteLarge)
+    var loadingView: UIView = UIView()
+
     
     
     override func viewDidLoad() {
@@ -46,9 +49,9 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -92,17 +95,21 @@ class ViewController: UIViewController {
         let path = "https://empresas.ioasys.com.br/api/v1/users/auth/sign_in"
         let headers = ["Content-Type" : "application/json"]
         
-        let parameters = ["email" : "\(textFieldEmail.text)", "password" : "\(textFieldPassword.text)"]
+        let parameters = ["email" : "\(textFieldEmail.text!)", "password" : "\(textFieldPassword.text!)"]
+        
+        showActivityIndicator()
         
         
-        networking.performRequest(type: ResultModel<Investor>.self, path: path, method: .post, headers: headers, parameters: parameters) { [self] (result, error) in
-
+        networking.performRequest(type: Login<Investor>.self, path: path, method: .post, headers: headers, parameters: parameters) { [self] (result, error) in
+            hideActivityIndicator()
             if let error = error {
                 print(error)
             } else {
+                
                 guard let result = result else { return }
                 if(result.success){
-                   print("funcionou")
+                    let home = self.storyboard?.instantiateViewController(withIdentifier: "home")
+                    navigationController?.pushViewController(home!, animated: true)
                 }else{
                     errorMessage()
                 }
@@ -121,7 +128,7 @@ class ViewController: UIViewController {
         textFieldEmail.layer.cornerRadius = 5
         textFieldEmail.layer.borderColor = .init(red: 1, green: 0, blue: 0, alpha: 1)
         textFieldEmail.rightViewMode = .always
-        //self.textFieldEmail.teste()
+        
        
         
         textFieldPassword.layer.borderWidth = 1
@@ -131,6 +138,30 @@ class ViewController: UIViewController {
         labelCredenciaisIncorretas.isHidden = false
         
     }
+    
+    func showActivityIndicator() {
+            self.loadingView = UIView()
+            self.loadingView.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+            self.loadingView.center = self.view.center
+            self.loadingView.backgroundColor = .gray
+            self.loadingView.alpha = 0.7
+            self.loadingView.clipsToBounds = true
+            self.loadingView.layer.cornerRadius = 10
+
+            self.spinner = UIActivityIndicatorView(style: .whiteLarge)
+            self.spinner.frame = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 80.0)
+            self.spinner.center = CGPoint(x:self.loadingView.bounds.size.width / 2, y:self.loadingView.bounds.size.height / 2)
+
+            self.loadingView.addSubview(self.spinner)
+            self.view.addSubview(self.loadingView)
+            self.spinner.startAnimating()
+    }
+
+    func hideActivityIndicator() {
+            self.spinner.stopAnimating()
+            self.loadingView.removeFromSuperview()
+    }
+    
     
     
     

@@ -34,12 +34,4 @@ enum CodingKeys: String, CodingKey {
 
 }
 
-struct Portfolio: Codable {
-    let enterprisesNumber: Int
-    let enterprises: [String]
 
-    enum CodingKeys: String, CodingKey {
-        case enterprisesNumber = "enterprises_number"
-        case enterprises
-    }
-}
