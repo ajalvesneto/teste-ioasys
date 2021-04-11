@@ -7,8 +7,12 @@
 import Foundation
 
 struct EnterpriseResponse<T: Decodable>: Decodable {
-    var enterprises: [Enterprise]
+    var enterprises: [Enterprise]?
     var errors: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case enterprises, errors
+    }
 }
 
 struct Enterprise: Codable {

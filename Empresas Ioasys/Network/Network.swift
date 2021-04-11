@@ -40,6 +40,16 @@ class Networking {
                 return
             }
             
+            if let httpResponse = response as? HTTPURLResponse {
+                
+                 if let xDemAuth = httpResponse.allHeaderFields as? [AnyHashable : Any] {
+                    
+                    UserDefaults.standard.set(xDemAuth["client"], forKey: "client")
+                    UserDefaults.standard.set(xDemAuth["uid"], forKey: "uid")
+                    UserDefaults.standard.set(xDemAuth["access-token"], forKey: "token")
+                    UserDefaults.standard.synchronize()
+                 }
+            }
         
             
             
@@ -54,4 +64,7 @@ class Networking {
         }
         task.resume()
     }
+    
+    
+    
 }
