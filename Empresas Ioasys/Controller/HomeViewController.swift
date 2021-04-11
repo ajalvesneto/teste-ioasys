@@ -61,8 +61,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let enterprise = enterprises[indexPath.row]
-        let details = self.storyboard?.instantiateViewController(withIdentifier: "details")
-        navigationController?.pushViewController(details!, animated: true)
+        let details = self.storyboard?.instantiateViewController(withIdentifier: "details") as! DetailsViewController
+        
+        details.selectedEnterpise = enterprise
+        navigationController?.pushViewController(details, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,7 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         
          
-        guard let photo =  enterprises[indexPath.section].photo else {
+        guard let photo =  enterprises[indexPath.row].photo else {
             return cell
         }
         

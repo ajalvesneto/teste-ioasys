@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     var button = UIButton();
     let image = UIImage(systemName: "eye.fill")
     
-    var imageViewEmail = UIImageView();
+    var imageViewEmail = UIImageView()
     let imageX = UIImage(systemName: "xmark.circle.fill")
     
     var spinner = UIActivityIndicatorView(style: .whiteLarge)
