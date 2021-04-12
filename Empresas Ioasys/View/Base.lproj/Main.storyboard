@@ -14,6 +14,9 @@
         <array key="Rubik-Regular.ttf">
             <string>Rubik-Regular</string>
         </array>
+        <array key="Rubik-VariableFont_wght.ttf">
+            <string>RubikRoman-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -270,14 +273,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL7-Kg-ynx">
-                                <rect key="frame" x="181" y="86" width="52.5" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <rect key="frame" x="180" y="86" width="54" height="24"/>
+                                <fontDescription key="fontDescription" name="RubikRoman-Bold" family="Rubik" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wK-L8-VM7">
-                                <rect key="frame" x="16" y="315" width="381" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <rect key="frame" x="16" y="315" width="381" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -287,9 +290,8 @@
                                     <constraint firstAttribute="height" constant="120" id="Zi0-rj-JQR"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWc-dc-mi6">
-                                <rect key="frame" x="16" y="78" width="47" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWc-dc-mi6">
+                                <rect key="frame" x="16" y="78" width="94" height="40"/>
                                 <state key="normal" title="Button" image="button_back"/>
                                 <connections>
                                     <action selector="back:" destination="rsp-az-Ox0" eventType="touchUpInside" id="Lb4-qB-vIu"/>
@@ -300,11 +302,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xL7-Kg-ynx" firstAttribute="centerX" secondItem="rcB-PE-jYq" secondAttribute="centerX" id="7s8-Mz-mbP"/>
+                            <constraint firstItem="xL7-Kg-ynx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NWc-dc-mi6" secondAttribute="trailing" constant="8" symbolic="YES" id="8Ip-0Q-V8F"/>
                             <constraint firstItem="jQ0-mh-Fy1" firstAttribute="trailing" secondItem="xLV-9E-gxU" secondAttribute="trailing" id="Dc5-Nx-fqO"/>
+                            <constraint firstItem="NWc-dc-mi6" firstAttribute="centerY" secondItem="xL7-Kg-ynx" secondAttribute="centerY" id="LWv-L6-t7P"/>
                             <constraint firstItem="9wK-L8-VM7" firstAttribute="top" secondItem="xLV-9E-gxU" secondAttribute="bottom" constant="36" id="MZx-e4-Fen"/>
                             <constraint firstItem="xLV-9E-gxU" firstAttribute="centerX" secondItem="rcB-PE-jYq" secondAttribute="centerX" id="Nfa-y8-d1J"/>
+                            <constraint firstItem="NWc-dc-mi6" firstAttribute="leading" secondItem="9wK-L8-VM7" secondAttribute="leading" id="hA5-ro-Z9f"/>
                             <constraint firstItem="xLV-9E-gxU" firstAttribute="top" secondItem="xL7-Kg-ynx" secondAttribute="bottom" constant="49" id="iuw-GU-LnZ"/>
                             <constraint firstItem="9wK-L8-VM7" firstAttribute="leading" secondItem="jQ0-mh-Fy1" secondAttribute="leading" constant="16" id="npd-7p-GRZ"/>
+                            <constraint firstItem="NWc-dc-mi6" firstAttribute="baseline" secondItem="xL7-Kg-ynx" secondAttribute="baseline" id="uwO-c2-U6c"/>
                             <constraint firstItem="xL7-Kg-ynx" firstAttribute="top" secondItem="jQ0-mh-Fy1" secondAttribute="top" constant="42" id="xEl-Rr-4pQ"/>
                             <constraint firstAttribute="trailing" secondItem="9wK-L8-VM7" secondAttribute="trailing" constant="17" id="xix-ID-EL6"/>
                         </constraints>
